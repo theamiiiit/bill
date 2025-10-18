@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Bills for Cuties 💕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4b6e;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #ff4b6e;
+      border: none;
+      padding: 12px 25px;
+      margin: 10px;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff7b9d;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <h1>Are you here for the bill?</h1>
+    <div class="buttons">
+      <button onclick="nextStep('confirm')">Yes</button>
+      <button onclick="alert('Enjoy your day then! 😄')">No</button>
+    </div>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      const app = document.getElementById('app');
+
+      if (step === 'confirm') {
+        app.innerHTML = `
+          <h1>Are you sure you wanna pay the bill??</h1>
+          <div class="buttons">
+            <button onclick="nextStep('sorry')">Yes</button>
+            <button onclick="alert('Good choice 😉')">No</button>
+          </div>
+        `;
+      }
+
+      else if (step === 'sorry') {
+        app.innerHTML = `
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3RvbThscWF1Y3o5OW5vY3I1MWVsY3V5ZXJtZ2JqN2ltOHhkcHZrdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Cute gif">
+          <h1>Sorry, but cuties don’t have to pay the bills here! 💖</h1>
+          <p>Have a great day! 🥰</p>
+          <button onclick="location.reload()">Start Over</button>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
